@@ -1,0 +1,26 @@
+#Question 1:
+#a)
+Basta trocar, na linha 10, mcc1 = sum2list(1, [3, 5, 6]) por mcc1 = sum2list([1], [3, 5, 6])
+
+#b)
+[3, 5, 6]
+[[3, 5, 6], [6, 10, 12]]
+
+#c)
+O nome sum2list não representa bem o que a função faz. Eu trocaria "sum2list" por "cartesian_product". 
+Comentário: # A função retorna o produto cartesiano de dois conjuntos nomeados l1 e l2, na forma l1 x l2.
+
+#Question 2:
+def two_sum(nums, target):
+    position = {}
+    for i in range(len(nums)):
+        number = nums[i]
+        complement = target - number
+        if complement in position:
+            return [position[complement], i]
+        position[number] = i
+    return[]
+nums = [ 7, 3, 4, 2, 11, 15 ]
+target = 9   
+result = two_sum(nums, target)
+print(result)
