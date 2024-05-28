@@ -11,16 +11,38 @@ O nome sum2list não representa bem o que a função faz. Eu trocaria "sum2list"
 Comentário: # A função retorna o produto cartesiano de dois conjuntos nomeados l1 e l2, na forma l1 x l2.
 
 #Question 2:
-def two_sum(nums, target):
-    position = {}
-    for i in range(len(nums)):
-        number = nums[i]
-        complement = target - number
-        if complement in position:
-            return [position[complement], i]
-        position[number] = i
-    return[]
-nums = [ 7, 3, 4, 2, 11, 15 ]
-target = 9   
-result = two_sum(nums, target)
-print(result)
+def two_sum(lista, target):
+
+    for i in range(len(lista)):
+        number1 = lista[i]
+        for j in range(1, len(lista)):
+            number2 = lista[j]
+            if target != number1 + number2:
+                return False
+            else:
+                
+                return [i, j]
+    
+two_sum([1, 2, 3, 4, 5, 6], 3)
+
+#Question 3:
+def average(lista):
+    soma = 0
+    for i in range(len(lista)):
+        soma += lista[i]
+        
+    media = soma/len(lista)
+    return media
+    
+average([1, 2, 3])
+
+#Questão 4:
+def minus_num(lista, num):
+    soma = 0
+    final = []
+    for i in range(len(lista)):
+         soma = lista[i] - num
+         final.append(soma)
+    return final
+    
+print(minus_num([1, 2, 6, 9], 1))
